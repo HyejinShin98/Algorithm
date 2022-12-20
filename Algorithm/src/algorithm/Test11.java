@@ -33,24 +33,19 @@ class Solution11 {
         for(int i=0; i<s.length(); i++) {
         	// 0번째부터 i번째까지에서 본인과 동일한 문자가 있는지 체크
         	for(int j=0; j<i; j++) {
-        		if(j == 0) {	// 첫 문자열은 처음 나온 문자이기 때문에 -1 
-        			answer[0] = -1;
-        		} else {
-        			
-        			String valByI = String.valueOf(s.charAt(i));
-        			String valByJ = String.valueOf(s.charAt(j));
-        			if(valByI.equals(valByJ)) {
-        				// 동일한 문자가 앞에 나왔을 경우
-        				answer[i] = i - j;	// 몇 번째 앞에있는지 저장
-        				/*
-        				System.out.println();
-        				System.out.println("i : " + i);
-        				System.out.println("j : " + j);
-        				System.out.println("answer[" + i + "] = " + answer[i]);
-        				*/
-        				continue;
-        			}
-        		}
+
+    			if(s.charAt(i) == s.charAt(j)) {
+    				// 동일한 문자가 앞에 나왔을 경우
+    				answer[i] = i - j;	// 몇 번째 앞에있는지 저장
+    				
+    				/*
+    				System.out.println();
+    				System.out.println("i : " + i);
+    				System.out.println("j : " + j);
+    				System.out.println("answer[" + i + "] = " + answer[i]);
+    				*/
+    				continue;
+    			}
         	}
         	
         	// 문자 이전에 같은 문자가 없을 시 -1 넣어주기
